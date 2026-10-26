@@ -1,33 +1,24 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";
 import Products from "./pages/Products";
+import Counter from "./hooks/Counter";
 
-
-
-
-
-
-function App(){
+function App() {
   return (
     <>
       <Router>
-          <Routes>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
 
-              <Route path="/" element={<LandingPage/>}/>
-
-              <Route path="/product" element={<Products/>}/>
-
-
-          </Routes>
-
-
-
-
+          <Route path="/product" element={<Products />} />
+        </Routes>
       </Router>
-    
+
+
+      <Counter/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
