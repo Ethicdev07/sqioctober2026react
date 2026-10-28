@@ -14,7 +14,22 @@ const Counter = () => {
 
     const [count, setCount] = useState(0);
 
-    const [theme, setTheme] = useState(true);
+    let [dark, setDark] = useState(false);
+
+    // const theme = ()=>{
+    //   if(dark){
+    //     console.log(dark);
+        
+    //     document.body.style.backgroundColor = 'white';
+    //   }
+    //   else{
+    //     document.body.style.backgroundColor = 'black'
+    //   }
+
+    //   dark = !dark;
+    //   console.log(dark);
+      
+    // }
 
   return (
     <div>
@@ -23,7 +38,9 @@ const Counter = () => {
       <div style={{display: 'flex', gap: '2em'}}>
           <button onClick={() => setCount(count + 1)}  style={{padding: "10px 20px", backgroundColor: 'blue', color: 'white', border: "none"}}>click</button>
 
-        <button style={{padding: '10px 20px', backgroundColor: "crimson", border: 'none'}}>Theme</button>
+        <button onClick={()=> setDark(theme())} style={{padding: '10px 20px', backgroundColor: "crimson", border: 'none'}}>dark</button>
+
+        <button onClick={()=> setDark((document.body.style.backgroundColor = dark ? "white" : "black", !dark))}>change theme</button>
       </div>
     </div>
   )

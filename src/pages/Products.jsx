@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from '../components/Nav';
+import Fetch from '../hooks/Fetch';
 
 const Products = () => {
   return (
@@ -7,6 +8,9 @@ const Products = () => {
     
     
         <Nav/>
+
+
+        <Fetch/>
     
     
     </>
